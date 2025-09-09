@@ -9,7 +9,7 @@ from app.data.president_message_en import president_message_en
 
 router = APIRouter(prefix="/home", tags=["Home"])
 
-@router.get("/home", response_model=HomeScreen)
+@router.get("/", response_model=HomeScreen)
 async def get_home(
     username: Optional[str] = Query(None, description="Username for greeting"),
     lang: str = Query("arabic", description="Language: arabic or english")
