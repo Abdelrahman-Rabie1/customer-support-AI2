@@ -5,7 +5,7 @@ from app.data.college_data import colleges_data, grants_list, general_rules
 
 router = APIRouter()
 
-@router.get("/colleges", response_model=CollegeScreen)
+@router.get("/", response_model=CollegeScreen)
 async def get_colleges ():
     data = list(colleges_data.values())
     return CollegeScreen(colleges=data, total_colleges=len(data))
